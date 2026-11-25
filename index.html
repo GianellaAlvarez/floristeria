@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taller Botánico Brisa — Floristería de Autor y Envíos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navegación minimalista en cápsula flotante -->
+  <header class="floating-nav-wrap">
+    <nav class="floating-nav" aria-label="Navegación principal">
+      <a href="#inicio" class="brand">Brisa<span>.botánica</span></a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#catalogo">Ramos y Plantas</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#taller">El Taller</a>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="cart-trigger" id="open-cart" aria-label="Abrir cesta de pedido">
+          <span>Cesta</span>
+          <strong class="cart-badge" id="cart-count">0</strong>
+        </button>
+        <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Menú" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <!-- Hero editorial con halos atmosféricos y sello giratorio -->
+    <section class="hero">
+      <div class="ambient-orb orb-sage" aria-hidden="true"></div>
+      <div class="ambient-orb orb-terracotta" aria-hidden="true"></div>
+
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <span class="pill-tag">Flor fresca cortada cada mañana · Entrega en el día</span>
+          <h1>Ramos silvestres con <em>alma</em> y sin artificios.</h1>
+          <p>
+            Diseñamos composiciones botánicas de temporada en nuestro taller. Elige tus flores, selecciona el tamaño y envíanos tu pedido directo por WhatsApp en segundos.
+          </p>
+          <div class="hero-buttons">
+            <a href="#catalogo" class="btn-dark">Explorar catálogo</a>
+            <a href="#proceso" class="btn-outline">Ver entregas y encargos</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div>
+              <strong>2 horas</strong>
+              <span>Entrega exprés en ciudad</span>
+            </div>
+            <div>
+              <strong>100 %</strong>
+              <span>Flor fresca de temporada</span>
+            </div>
+            <div>
+              <strong>Tarjeta</strong>
+              <span>Dedicatoria escrita a mano</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-showcase">
+          <!-- Sello botánico giratorio -->
+          <div class="botanical-seal" id="botanical-seal" aria-hidden="true">
+            <svg viewBox="0 0 140 140" width="128" height="128">
+              <defs>
+                <path id="sealCircle" d="M 70, 70 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0" />
+              </defs>
+              <text>
+                <textPath href="#sealCircle" startOffset="0%">
+                  FLOR FRESCA • HECHO A MANO EN EL TALLER •
+                </textPath>
+              </text>
+            </svg>
+            <span class="seal-center">✿</span>
+          </div>
+
+          <div class="showcase-frame">
+            <img
+              src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=900&q=80"
+              alt="Ramo silvestre con eucalipto, rosas de jardín y flores de temporada"
+            />
+            <div class="showcase-floating-note">
+              <span>Ramo Destacado · Temporada</span>
+              <strong>Silvestre de Primavera — desde 34,00 €</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cinta editorial continua -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Ramos silvestres de temporada</span>
+        <span class="marquee-dot">✦</span>
+        <span>Entrega en 2 horas</span>
+        <span class="marquee-dot">✦</span>
+        <span>Envueltos en papel de algodón y lino</span>
+        <span class="marquee-dot">✦</span>
+        <span>Dedicatoria escrita a mano incluida</span>
+        <span class="marquee-dot">✦</span>
+        <span>Pedido directo por WhatsApp sin registros</span>
+        <span class="marquee-dot">✦</span>
+        <!-- Duplicado para bucle infinito fluido -->
+        <span>Ramos silvestres de temporada</span>
+        <span class="marquee-dot">✦</span>
+        <span>Entrega en 2 horas</span>
+        <span class="marquee-dot">✦</span>
+        <span>Envueltos en papel de algodón y lino</span>
+        <span class="marquee-dot">✦</span>
+        <span>Dedicatoria escrita a mano incluida</span>
+        <span class="marquee-dot">✦</span>
+        <span>Pedido directo por WhatsApp sin registros</span>
+        <span class="marquee-dot">✦</span>
+      </div>
+    </div>
+
+    <!-- Catálogo e-commerce con filtros, selector de tamaño y vista rápida -->
+    <section id="catalogo" class="section">
+      <div class="container">
+        <div class="catalog-header">
+          <div>
+            <span class="eyebrow">Tienda online sin registro · Pulsa la foto para ver detalles</span>
+            <h2>Catálogo de Ramos y Plantas</h2>
+          </div>
+
+          <div class="category-pills" role="tablist" aria-label="Filtrar productos">
+            <button type="button" class="cat-btn active" data-category="todos">Todo</button>
+            <button type="button" class="cat-btn" data-category="ramos">Ramos frescos</button>
+            <button type="button" class="cat-btn" data-category="preservados">Flor preservada</button>
+            <button type="button" class="cat-btn" data-category="plantas">Plantas y macetas</button>
+          </div>
+        </div>
+
+        <div class="products-grid" id="products-grid"></div>
+      </div>
+    </section>
+
+    <!-- Cómo pedir por WhatsApp en 3 pasos limpios -->
+    <section id="proceso" class="section section-soft">
+      <div class="container">
+        <div class="section-center-head">
+          <span class="eyebrow">Compra directa y cercana</span>
+          <h2>Pide sin crear cuentas ni contraseñas</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-num">01</span>
+            <h3>Elige tus ramos o plantas</h3>
+            <p>Selecciona el tamaño que prefieras y añádelo a tu cesta. Puedes combinar varios artículos en un mismo pedido.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-num">02</span>
+            <h3>Escribe tu dedicatoria</h3>
+            <p>En la cesta podrás indicar si es para recoger o enviar a domicilio, la fecha y el texto de la tarjeta.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-num">03</span>
+            <h3>Confirma por WhatsApp</h3>
+            <p>Al pulsar enviar, se abrirá nuestro chat con tu resumen ordenado. Confirmamos stock y abonas por Bizum, tarjeta o efectivo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios especiales: Eventos y Suscripción Floral -->
+    <section class="section">
+      <div class="container">
+        <div class="section-center-head">
+          <span class="eyebrow">Más allá del ramo diario</span>
+          <h2>Flores para momentos especiales y espacios vivos</h2>
+        </div>
+
+        <div class="special-grid">
+          <article class="special-card">
+            <img
+              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80"
+              alt="Decoración floral para eventos y mesas"
+              loading="lazy"
+            />
+            <div class="special-body">
+              <span class="eyebrow">A medida</span>
+              <h3>Bodas íntimas y eventos</h3>
+              <p>Ramos de novia, prendidos, centros de mesa y arcos botánicos diseñados según la estación y el espacio.</p>
+              <a
+                href="https://wa.me/34600123456?text=Hola%20Brisa%20Botanica,%20me%20gustaria%20pedir%20presupuesto%20para%20un%20evento"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+              >
+                Pedir propuesta para evento →
+              </a>
+            </div>
+          </article>
+
+          <article class="special-card">
+            <img
+              src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=800&q=80"
+              alt="Jarrón con flores frescas de suscripción semanal"
+              loading="lazy"
+            />
+            <div class="special-body">
+              <span class="eyebrow">Cada semana o quincena</span>
+              <h3>Suscripción floral para casa u oficina</h3>
+              <p>Recibe flor fresca cortada lista para poner en jarrón con renovación periódica y sin compromiso de permanencia.</p>
+              <a
+                href="https://wa.me/34600123456?text=Hola%20Brisa%20Botanica,%20quiero%20informacion%20sobre%20la%20suscripcion%20floral"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+              >
+                Consultar planes de suscripción →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes (Acordeón desplegable) -->
+    <section class="section section-soft">
+      <div class="container faq-wrap">
+        <div class="section-center-head">
+          <span class="eyebrow">Resolvemos tus dudas</span>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>¿Hacéis entregas en el mismo día?</summary>
+            <p>Sí. Todos los pedidos confirmados por WhatsApp antes de las 17:30 h se entregan en la misma tarde en toda la ciudad.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Cómo funciona el pago sin pasarela en la web?</summary>
+            <p>Al enviarnos tu cesta por WhatsApp verificamos que todas las flores del día estén listas y te facilitamos pago rápido por Bizum, enlace seguro con tarjeta o efectivo al recoger.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Puedo incluir una tarjeta con mensaje personal?</summary>
+            <p>Por supuesto. Todos los ramos y plantas incluyen sin coste una tarjeta de algodón escrita a mano con el texto que nos indiques en la cesta.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Cuánto duran las flores preservadas?</summary>
+            <p>Son flores naturales tratadas para conservar su textura y color sin necesidad de agua ni luz solar directa; se mantienen impecables entre 1 y 3 años.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre el taller y encargo a medida -->
+    <section id="taller" class="section">
+      <div class="container studio-grid">
+        <div class="studio-image">
+          <img
+            src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=80"
+            alt="Mesa de trabajo en floristería artesanal con flores frescas"
+          />
+        </div>
+
+        <div class="studio-info">
+          <span class="eyebrow">Nuestro taller</span>
+          <h2>Arreglos pensados para durar y emocionar</h2>
+          <p>
+            En <strong>Taller Botánico Brisa</strong> trabajamos sin cámaras frigoríficas de largo almacenaje: recibimos flor cortada cada mañana de cultivadores locales y envolvemos cada ramo en papel de algodón y cuerda de lino.
+          </p>
+
+          <ul class="studio-details">
+            <li><span>Dirección</span><strong>Calle de la Palma, 42 · Local Bajo</strong></li>
+            <li><span>Horario de taller</span><strong>Lun – Sáb · 10:00 a 20:00</strong></li>
+            <li><span>Pedidos para hoy</span><strong>Hasta las 17:30 h</strong></li>
+          </ul>
+
+          <a
+            href="https://wa.me/34600123456?text=Hola%20Brisa%20Botanica,%20me%20gustaria%20encargar%20un%20ramo%20personalizado"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline"
+          >
+            Consultar ramo personalizado por WhatsApp →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="brand">Brisa<span>.botánica</span></strong>
+        <p>Floristería de autor · Pedidos directos por WhatsApp</p>
+      </div>
+      <div class="footer-links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#proceso">Envíos</a>
+        <a href="#taller">El Taller</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante rápido de cesta -->
+  <button type="button" class="floating-cart-pill" id="floating-cart-btn" aria-label="Ver cesta">
+    <span>Ver cesta</span>
+    <strong id="floating-total">0,00 €</strong>
+  </button>
+
+  <!-- Modal Vista Rápida (Quick View) del ramo -->
+  <div class="qv-backdrop" id="qv-backdrop"></div>
+  <div class="qv-modal" id="qv-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="qv-title">
+    <button type="button" class="qv-close" id="qv-close" aria-label="Cerrar ficha">✕</button>
+    <div class="qv-grid">
+      <div class="qv-media">
+        <img id="qv-img" src="" alt="" />
+        <span class="product-badge" id="qv-badge"></span>
+      </div>
+      <div class="qv-content">
+        <span class="eyebrow" id="qv-cat"></span>
+        <h3 id="qv-title"></h3>
+        <div class="qv-price" id="qv-price"></div>
+        <p class="qv-desc" id="qv-desc"></p>
+
+        <div class="qv-specs">
+          <div>
+            <strong>Composición</strong>
+            <p id="qv-stems"></p>
+          </div>
+          <div>
+            <strong>Cuidados en casa</strong>
+            <p id="qv-care"></p>
+          </div>
+        </div>
+
+        <label class="qv-size-label">Selecciona tamaño:</label>
+        <div class="size-selector" id="qv-sizes"></div>
+
+        <button type="button" class="add-to-cart-btn" id="qv-add-btn">
+          Añadir a la cesta
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawer / Carrito lateral desplegable -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Cesta de compra">
+    <div class="drawer-head">
+      <div>
+        <h3>Tu cesta</h3>
+        <p>Sin registro · Envío directo a WhatsApp</p>
+      </div>
+      <button type="button" class="close-drawer" id="close-cart" aria-label="Cerrar cesta">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="cart-items" id="cart-items"></div>
+
+      <form class="checkout-form" id="checkout-form" novalidate>
+        <h4>Datos para preparar tu pedido</h4>
+
+        <label>
+          Tu nombre *
+          <input type="text" id="cust-name" placeholder="Ej. Sofía Martín" required />
+        </label>
+
+        <div class="delivery-toggle" role="group" aria-label="Tipo de entrega">
+          <button type="button" class="del-btn active" data-delivery="Envío a domicilio">Envío a domicilio</button>
+          <button type="button" class="del-btn" data-delivery="Recogida en taller">Recogida en taller</button>
+        </div>
+
+        <label id="address-field">
+          Dirección de entrega *
+          <input type="text" id="cust-address" placeholder="Calle, número, piso y código postal" />
+        </label>
+
+        <div class="form-row-2">
+          <label>
+            Fecha deseada *
+            <input type="date" id="cust-date" required />
+          </label>
+
+          <label>
+            Método de pago
+            <select id="cust-payment">
+              <option value="Bizum al confirmar">Bizum al confirmar</option>
+              <option value="Enlace de tarjeta">Enlace de tarjeta</option>
+              <option value="Efectivo en entrega / taller">Efectivo en entrega</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Texto para la tarjeta dedicatoria (gratis)
+          <textarea id="cust-card" rows="2" placeholder="Ej. Feliz cumpleaños, con todo mi cariño..."></textarea>
+        </label>
+
+        <p class="checkout-error" id="checkout-error" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="drawer-foot">
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">0,00 €</span>
+      </div>
+      <div class="summary-line">
+        <span>Entrega</span>
+        <span id="cart-shipping">4,50 €</span>
+      </div>
+      <div class="summary-total">
+        <span>Total estimado</span>
+        <strong id="cart-total">0,00 €</strong>
+      </div>
+
+      <button type="submit" form="checkout-form" class="btn-whatsapp-order" id="send-whatsapp-btn">
+        Pedir ahora por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Toast de confirmación -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
